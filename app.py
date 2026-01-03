@@ -18,11 +18,7 @@ DB_PATH = os.path.join(BASE_DIR, "tongsampah.db")
 # ======================
 # FIREBASE (LOCAL FILE)
 # ======================
-import json
-
-firebase_key = json.loads(os.environ["FIREBASE_KEY"])
-cred = credentials.Certificate(firebase_key)
-
+cred = credentials.Certificate("serviceAccountKey.json")
 firebase_admin.initialize_app(cred, {
     "databaseURL": "https://tongsampah-fb84c-default-rtdb.firebaseio.com/"
 })
